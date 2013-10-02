@@ -1,13 +1,22 @@
-# boltbus [![Build Status](https://secure.travis-ci.org/fitz/boltbus.png?branch=master)](http://travis-ci.org/fitz/boltbus)
+# boltbus [![Build Status](https://secure.travis-ci.org/ryanfitz/node-boltbus.png?branch=master)](http://travis-ci.org/ryanfitz/node-boltbus)
 
-Distributed serv
+Distributed eventemitter for use with AWS
 
 ## Getting Started
 Install the module with: `npm install boltbus`
 
 ```javascript
 var boltbus = require('boltbus');
-boltbus.awesome(); // "awesome"
+
+AWS.config.loadFromPath(process.env.HOME + '/.ec2/credentials.json');
+
+var bus = boltbus('app1', AWS);
+
+bus.on('connection', function () {
+  bus.emit('app1:started');
+});
+
+bus.connect();
 ```
 
 ## Documentation
