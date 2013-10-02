@@ -25,13 +25,20 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt simplemocha"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "mocha": "~1.13.0",
+    "chai": "~1.8.0",
+    "grunt-simple-mocha": "~0.4.0"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "aws-sdk": "~1.7.0",
+    "lodash": "~2.2.0"
+  }
 }
